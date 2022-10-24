@@ -47,7 +47,7 @@ jobs:
         python -m pip install -q -U 'faulthandler; python_version == "2.7" and platform_python_implementation == "CPython"'
     - name: Install greenlet
       run: |
-        python setup.py bdist_wheel
+        python setup.py bdist_wheel --universal
         python -m pip install -U -e ".[test,docs]"
       env:
         # Ensure we test with assertions enabled.
